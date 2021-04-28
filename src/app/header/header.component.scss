@@ -2,6 +2,11 @@
     margin: 30px;
     .top-head {
         justify-content: space-between;
+        .logo {
+            img {
+                width: 35%;
+            }
+        }
         ul {
             list-style-type: none;
             display: inline-block;
@@ -32,15 +37,20 @@
             }
             .btn-holder {
                 margin-left: -15px;
+                button {
+                    background-color: #ccc;
+                    color: black;
+                }
             }
         }
     }
 }
 
 .bottom-head {
-    // background-color: rgba(153, 205, 50, 0.411);
     padding: 10px 0;
-    opacity: 0.5;
+    margin-top: -60px;
+    background: url("../../assets/images/math.png") top no-repeat;
+    height: 250px;
     h1 {
         color: yellow;
         font-size: 100px;
@@ -48,14 +58,25 @@
     .headings {
         display: inline-block;
         text-align: right;
+        position: relative;
+        top: 30px;
+
         h2,
         p {
-            background-color: ghostwhite;
             border-radius: 10px;
             -webkit-border-radius: 10px;
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 10px;
+            background-color: #cccc;
+            color: white;
+            width: 90%;
+            padding: 3px;
+            font-family: inherit;
+            font-weight: 400;
+        }
+        p {
+            width: 100%;
         }
     }
 }

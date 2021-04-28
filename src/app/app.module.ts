@@ -14,6 +14,7 @@ import { HeaderComponent } from "./header/header.component";
 import { CoursesComponent } from "./courses/courses.component";
 import { NzCheckboxModule } from "ng-zorro-antd/checkbox";
 import { NzInputModule } from "ng-zorro-antd/input";
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 registerLocaleData(en);
 
@@ -27,6 +28,7 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     NzCheckboxModule,
     NzInputModule,
+    NzIconModule ,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

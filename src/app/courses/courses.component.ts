@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-
+declare var require: any
+const data: any = require('./courses.json')
+const filters: any = require('./filter.json')
 @Component({
   selector: "app-courses",
   templateUrl: "./courses.component.html",
@@ -8,8 +10,13 @@ import { Component, OnInit } from "@angular/core";
 export class CoursesComponent implements OnInit {
   checked: boolean = true;
   searchValue;
+  courses:any [] = []
+  filters: any [] = [];
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.courses = data
+    this.filters = filters
+  }
   onSearchChange() {}
 }

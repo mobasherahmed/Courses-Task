@@ -1,1 +1,79 @@
-/* You can add global styles to this file, and also import other style files */
+/* Add global styles to this file, and also import other style files, 
+also ovride css styles of Ngzorro default appearance so i use !Important */
+
+$background-color: #181818;
+$color-gray: #ccc;
+$color-white: white;
+$primary-color: seagreen;
+
+body {
+    background-color: #121212 !important;
+    color: $color-gray !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: seagreen !important;
+    border-color: $color-gray !important;
+}
+
+h2 {
+    color: $color-white;
+}
+
+h1,
+h3,
+h4,
+h6 {
+    color: $color-gray !important;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ant-input-group-addon {
+    color: $color-gray !important;
+    background-color: #121212 !important;
+}
+.ant-input {
+    color: $color-gray !important;
+    background-color: #121212 !important;
+    border-left: 0;
+}
+
+.ant-input:focus,
+.ant-input-group:focus,
+.ant-input:hover,
+.ant-input-group:hover {
+    border-color: $color-gray;
+    border-left: 0;
+    box-shadow: none;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: seagreen !important;
+    border-color: $color-gray !important;
+}
+
+label {
+    color: $color-gray;
+}
+
+ul {
+    font-size: 14px;
+}
+button {
+    font-size: 14px;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: seagreen !important;
+    border-color: seagreen !important;
+    color: #121212;
+}
+ant-checkbox:hover {
+    border-color: $color-gray !important;
+}
+.ant-checkbox-wrapper + .ant-checkbox-wrapper {
+    margin-left: 0 !important;
+}

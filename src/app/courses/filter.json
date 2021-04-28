@@ -1,0 +1,28 @@
+[
+    {
+        "filterCategory": "Course Duration",
+        "names": [
+            "Less than 2 hours",
+            "From 2 hours to 10 hours",
+            "more than 10 hours"
+        ]
+    },
+    {
+        "filterCategory": "All Categories",
+        "names": [
+            "Development",
+            "Finance & Accounting",
+            "IT & Software",
+            "Others"
+        ]
+    },
+    {
+        "filterCategory": "The difficulty level of the course",
+        "names": [
+            "Beginner",
+            "Intermediate",
+            "Expert",
+            "All Levels"
+        ]
+    }
+]
