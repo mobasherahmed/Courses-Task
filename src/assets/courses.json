@@ -115,7 +115,7 @@
     "CoursePrice": 20.0,
     "AvailableSeats": 5,
     "CourseImg": "https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/3992409/910/607/m1/fpnw/wm0/4-.jpg?1518444576&s=377d1cb89931d61e7f5f40a2ef61d106",
-    "courseLevel": "",
+    "courseLevel": "Intermediate",
     "CourseDuration": 50,
     "CourseCategory": "Math"
   },

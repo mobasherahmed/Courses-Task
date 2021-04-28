@@ -17,23 +17,24 @@
 
     </div>
 
-    <div class="courses col-md-8">
+    <div class=" courses col-md-8">
 
-        <div class="row" style="justify-content: space-between;">
+        <div class="row" style="justify-content: space-between;padding: 0 22px;">
             <div class="title">
                 <h3>All Courses</h3>
             </div>
             <div class="search">
                 <nz-input-group [nzAddOnBefore]="suffixIconSearch">
-                    <input type="text" nz-input placeholder="Search By course name" />
+                    <input type="text" nz-input placeholder="Search By course name" (change)="onSearchChange()"
+                        [(ngModel)]="searchValue" />
                     <ng-template #suffixIconSearch>
-                        <i nz-icon nzType="search"></i>
+                        <i nz-icon nzType="search" (click)="onSearchChange()" class="searchIcon"></i>
                     </ng-template>
                 </nz-input-group>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-4" *ngFor="let course of courses">
+        <div class="row ">
+            <div class="col-md-4" *ngFor="let course of displayData; let i=index">
                 <div class="img-holder">
                     <img [src]="course.CourseImg" alt="course image">
                 </div>
@@ -77,9 +78,62 @@
                 </div>
             </div>
         </div>
+
     </div>
+
+    <!-- <div class="card-body col-lg-8">
+        <nz-empty nzNotFoundContent="No Courses Matches your search .." style="margin-top: 50px;"
+            nzNotFoundImage="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg">
+        </nz-empty>
+    </div> -->
 
     <div class="rightside col-md-2">
+        <div class="todoList">
+            <h5>TodoList</h5>
+            <div class="pagination">
+                <!-- <nz-pagination [nzPageIndex]="1" [nz-total]="10"></nz-pagination> -->
+            </div>
 
+            <p>{{today | date:'fullDate'}}</p>
+            <div class="list" *ngFor="let i of [1,2,3]">
+                <div class="row">
+
+                    <div class="col-md-3 time">
+                        <div class="d-flex">
+                            <p>
+                                9am-10am
+                            </p>
+                            <span class="mt-1">|</span>
+                        </div>
+                    </div>
+                    <div class="col-md-8 mt-3 ml-2">
+
+                        <label nz-checkbox [(ngModel)]="checked">
+                            <span style="text-decoration: line-through;">
+                                Lorem ipsum
+                            </span>
+                        </label>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="updates">
+            <h5>Recent Updates</h5>
+            <div class="content" *ngFor="let i of [1,2,3]">
+                <div class="row">
+                    <div class="d-flex">
+                        <div class="img-holder">
+                            <img src="assets/images/1.jpg" alt="photo">
+                        </div>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-</div>

@@ -13,6 +13,14 @@ $primary-color: seagreen;
         border-top-right-radius: 5px;
     }
     .courses {
+        .search {
+            margin-top: 9px;
+        }
+        .searchIcon {
+            cursor: pointer;
+            font-size: 20px;
+            line-height: 1;
+        }
         .title {
             border-bottom: 5px solid $primary-color;
             margin-bottom: 15px;
@@ -76,4 +84,76 @@ $primary-color: seagreen;
     label {
         color: $color-gray;
     }
+    .todoList {
+        background-color: $background-color;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        margin-top: 10px;
+        padding: 10px;
+        h5 {
+            color: $color-white;
+            padding: 5px 5px 0 5px;
+        }
+        p {
+            color: $primary-color;
+            padding: 10px;
+            margin-bottom: -10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            padding-left: 0;
+        }
+        .list {
+            border-bottom: 1px solid $color-gray;
+            &:last-child {
+                border: 0;
+            }
+            .time {
+                p {
+                    color: $color-gray;
+                }
+                span {
+                    line-height: 3;
+                }
+            }
+        }
+    }
+
+    .updates {
+        @extend .todoList;
+        .content {
+            border-bottom: 1px solid $color-gray;
+            &:last-child {
+                border: 0;
+            }
+        }
+        img {
+            width: 40px;
+            height: 40px;
+            margin: 5px 15px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+        }
+        p {
+            color: $color-gray;
+            font-size: 10px;
+        }
+    }
+}
+
+@mixin mainDiv {
+    background-color: $background-color;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
 }
