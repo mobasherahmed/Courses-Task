@@ -1,5 +1,6 @@
 @import "../../css/variables.scss";
 @import "../../css/scrollbar.scss";
+@import "../../css/mixins.scss";
 
 .allcourses {
     margin: 30px;
@@ -36,6 +37,7 @@
             button {
                 font-size: 14px;
             }
+
             .btn-success {
                 background-color: $color-white;
                 color: $primary-color;
@@ -60,6 +62,11 @@
                     -moz-transition: 1s all ease-in-out;
                     -ms-transition: 1s all ease-in-out;
                     -o-transition: 1s all ease-in-out;
+                }
+
+                &:disabled {
+                    background-color: $primary-color;
+                    color: $color-white;
                 }
             }
         }
@@ -174,4 +181,16 @@
             max-height: 40px;
         }
     }
+}
+
+.alert {
+    font-family: auto;
+    font-size: 17px;
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    z-index: 1;
+    padding: 7px;
+    white-space: pre-line;
+    width: 400px;
 }

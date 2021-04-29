@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from "rxjs";
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShareDataService {
-  private user = new BehaviorSubject('');
 
-  getUserId() {
-    return this.user;
+  courses :any [] = []
+
+  getRequestedCourses(){
+    return this.courses;
 }
  
-  assignUserId(message: any) {
-    this.user.next(message);
+  assignRequestedCourse(message: any) {
+    this.courses.push(message);
 }
 }

@@ -35,4 +35,13 @@
             }
         }
     }
+    .totalPrice {
+        float: right;
+        background-color: $background-color;
+        color: seagreen;
+        font-size: 18px;
+        box-shadow: 0px -1px 4px white;
+        padding: 10px;
+        @include border-raduis(5px);
+    }
 }

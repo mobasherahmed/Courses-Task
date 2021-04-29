@@ -9,16 +9,19 @@
                 <div class="links">
                     <ul>
                         <div class="d-flex">
-                            <li><a routerLink="all-courses" class="active">Home</a></li>
+                            <li><a id="home" (click)="navigateTo('all-courses')"
+                                    [ngClass]="activeText === 'home'? 'active':''">Home</a></li>
                             <li class="text-white"> | </li>
-                            <li><a routerLink="requested-courses/{{StudentId}}">Student Requested Courses</a></li>
+                            <li><a id="requesed" (click)="navigateTo('requested')"
+                                    [ngClass]="activeText === 'requested'? 'active':''">Student Requested Courses</a>
+                            </li>
                         </div>
                     </ul>
                 </div>
-                <div class="profile-photo" routerLink="profile/{{StudentId}}" style="cursor: pointer;">
+                <div class="profile-photo" (click)="navigateTo('profile')" style="cursor: pointer;">
                     <img src="assets/images/1.jpg" alt="">
                     <div class="btn-holder">
-                        <button routerLink="profile/{{StudentId}}">My Profile</button>
+                        <button (click)="navigateTo('profile')">My Profile</button>
                     </div>
                 </div>
             </div>

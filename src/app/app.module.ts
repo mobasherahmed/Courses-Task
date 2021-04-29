@@ -24,7 +24,8 @@ import { ProfileComponent } from './profile/profile.component';
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, CoursesComponent, RequestedCoursesComponent,EmptyComponent, ProfileComponent],
+  declarations: [AppComponent, HeaderComponent, CoursesComponent, RequestedCoursesComponent,
+    EmptyComponent, ProfileComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

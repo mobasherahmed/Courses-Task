@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CoursesService } from 'src/services/courses.service';
+import { ShareDataService } from 'src/services/share-data.service';
 
 @Component({
   selector: 'app-requested-courses',
@@ -14,9 +15,13 @@ export class RequestedCoursesComponent implements OnInit {
   displayData: any[]; 
   StudentId : any;
   studentCourses: any [] = [];
+  requestedCourses: any [] = [];
   AllCourses: any;
   requrstCourseDetails: { PaymentType: any; RequestDate: any; };
-  constructor(private _course:CoursesService,private route:ActivatedRoute) {
+  TotalPrice: number;
+  constructor(private _course:CoursesService,private route:ActivatedRoute,private share:ShareDataService) {
+    this.requestedCourses = this.share.getRequestedCourses()
+    console.log(this.requestedCourses)
    }
 
   ngOnInit(): void {
@@ -51,12 +56,21 @@ export class RequestedCoursesComponent implements OnInit {
        let studentCourse = this.AllCourses.filter(all => course.CourseId === all.CourseId)
        this.studentCourses.push(studentCourse[0])
       });
-      this.displayData = this.studentCourses
+      this.displayData = this.requestedCourses.concat(this.studentCourses)
+      this.getTotalPrice(this.displayData)
     })
   }
 
+  getTotalPrice(data){
+    let price  = 0 
+    data.forEach(el => {
+      price += el.CoursePrice;
+      this.TotalPrice = price
+    });
+    
+  }
   // unsubscribe observables
   ngOnDestroy(){
     this.subscription.unsubscribe()
-    } 
+  } 
 }

@@ -1,4 +1,8 @@
+<div class="alert alert-success" role="alert" *ngIf="showAlert">
+    {{CourseName}} is added successfully to your cart
+</div>
 <div class="row my-3 allcourses">
+
 
     <div class="filter col-md-2">
         <div class="main">
@@ -72,7 +76,10 @@
                         </div>
 
                         <div class="col-md-4 mt-3">
-                            <button class="btn btn-success">Add to cart</button>
+                            <button class="btn btn-success" (click)="addCourse(course)"
+                                [disabled]="CourseId.includes(course.CourseId)">{{CourseId.includes(course.CourseId) ?
+                                cartText :
+                                'Add to cart'}}</button>
 
                         </div>
                     </div>
@@ -143,3 +150,4 @@
 
         </div>
     </div>
+</div>

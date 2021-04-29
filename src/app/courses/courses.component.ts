@@ -20,12 +20,11 @@ export class CoursesComponent implements OnInit {
   today:any = new Date
   filterArr: any [] = [];
   StudentId:number = 1234;
+  CourseName:string
+  showAlert: boolean;
+  CourseId: any[] = [];
+  cartText :string= 'Add to cart'
   constructor(private _course:CoursesService,private share:ShareDataService) {
-    /*
-    In Ordianary cases i will get information of user and share it on a services as below
-    to able using any of user data in any component , But Here i will user StudentId variable ..
-    */
-   this.share.assignUserId(this.StudentId)
   }
 
   ngOnInit(): void {
@@ -47,6 +46,18 @@ export class CoursesComponent implements OnInit {
       localStorage.setItem('Courses', JSON.stringify(data.courses));
       this.filters = data.filters
     })
+  }
+
+  //add course
+  addCourse(course){
+    this.share.assignRequestedCourse(course)
+    this.CourseName = course.CourseName
+    this.CourseId.push(course.CourseId) 
+    this.cartText = 'In your cart'
+    this.showAlert = true
+    setTimeout(() => {
+      this.showAlert = false
+    }, 2000);
   }
 
   // search function 
