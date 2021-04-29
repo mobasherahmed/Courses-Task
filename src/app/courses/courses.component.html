@@ -1,14 +1,16 @@
 <div class="row my-3 allcourses">
 
     <div class="filter col-md-2">
-        <div>
+        <div class="main">
             <div class="title">
                 <h4>Filter BY:</h4>
             </div>
-            <div class="col-md-12" *ngFor="let item of filters">
-                <p>{{item.filterCategory}}</p>
-                <div class="content">
-                    <label nz-checkbox [(ngModel)]="checked" *ngFor="let name of item.names">
+            <div class="col-md-12" *ngFor="let item of filters;let i = index">
+                <p #category>{{item.filterCategory}}</p>
+                <div class="content" [ngClass]="i === 2 ? 'lastContent': 'content'">
+                    <label nz-checkbox [ngModel]="checked"
+                        (ngModelChange)="getFilterValue($event,name,category.innerText)"
+                        *ngFor="let name of item.names">
                         {{name}}
                     </label>
                 </div>
@@ -33,7 +35,7 @@
                 </nz-input-group>
             </div>
         </div>
-        <div class="row ">
+        <div class="row " nzTooltipTitle="prompt text" nzTooltipPlacement="top" nz-tooltip>
             <div class="col-md-4" *ngFor="let course of displayData; let i=index">
                 <div class="img-holder">
                     <img [src]="course.CourseImg" alt="course image">
@@ -44,8 +46,6 @@
                     </div>
 
                     <div class="row">
-                        <!-- <div class="col-md-12">
-                            <div class="row"> -->
                         <div class="col-md-8">
                             <div class="d-flex" style="margin-right: 15px;">
                                 <ul style="margin-right: 15px;">
@@ -54,8 +54,13 @@
                                 </ul>
                                 <ul>
                                     <li>
-                                        <i nz-icon nzType="usergroup-add" nzTheme="outline"></i>
-                                        {{course.AvailableSeats}}
+                                        <span>
+                                            <i nz-icon nzType="usergroup-add" nzTheme="outline"
+                                                [ngClass]="course.AvailableSeats < 10 ? 'text-danger': 'text-success'"></i>
+                                        </span>
+                                        <span>
+                                            {{course.AvailableSeats}}
+                                        </span>
                                     </li>
                                     <li>
                                         {{course.CoursePrice | currency}}
@@ -70,9 +75,6 @@
                             <button class="btn btn-success">Add to cart</button>
 
                         </div>
-
-                        <!-- </div>
-                        </div> -->
                     </div>
 
                 </div>
@@ -95,7 +97,7 @@
             </div>
 
             <p>{{today | date:'fullDate'}}</p>
-            <div class="list" *ngFor="let i of [1,2,3]">
+            <div class="list" *ngFor="let i of [1,2,3,4,5,6,7,8]">
                 <div class="row">
 
                     <div class="col-md-3 time">
@@ -107,12 +109,14 @@
                         </div>
                     </div>
                     <div class="col-md-8 mt-3 ml-2">
-
-                        <label nz-checkbox [(ngModel)]="checked">
-                            <span style="text-decoration: line-through;">
+                        <label nz-checkbox [(ngModel)]="todoListCheck">
+                            <!--- del tag used to line throgh text Semantic HTML-->
+                            <del>
                                 Lorem ipsum
-                            </span>
+                            </del>
                         </label>
+
+
 
                     </div>
                 </div>
@@ -122,7 +126,7 @@
 
         <div class="updates">
             <h5>Recent Updates</h5>
-            <div class="content" *ngFor="let i of [1,2,3]">
+            <div class="content" *ngFor="let i of [1,2,3,4,5,6,7,8]">
                 <div class="row">
                     <div class="d-flex">
                         <div class="img-holder">

@@ -68,21 +68,32 @@ $primary-color: seagreen;
     }
 
     .filter {
-        .content,
-        .title,
+        p {
+            margin-bottom: 0 !important;
+        }
+        .content .title,
         div {
             background-color: $background-color;
             padding: 10px;
         }
         .content {
-            border-bottom: 2px solid white;
-        }
-        div {
+            border-bottom: 2px solid $color-gray;
             border-radius: 10px;
+            -webkit-border-radius: 10;
+            -moz-border-radius: 10;
+            -ms-border-radius: 10;
+            -o-border-radius: 10;
+        }
+        .main {
+            border-radius: 10px;
+            .lastContent {
+                border-bottom: 0;
+            }
         }
     }
     label {
         color: $color-gray;
+        white-space: pre;
     }
     .todoList {
         background-color: $background-color;
@@ -92,7 +103,9 @@ $primary-color: seagreen;
         -ms-border-radius: 5px;
         -o-border-radius: 5px;
         margin-top: 10px;
-        padding: 10px;
+        height: 250px;
+        overflow: auto;
+        padding: 15px;
         h5 {
             color: $color-white;
             padding: 5px 5px 0 5px;
@@ -145,15 +158,4 @@ $primary-color: seagreen;
             font-size: 10px;
         }
     }
-}
-
-@mixin mainDiv {
-    background-color: $background-color;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    margin-top: 10px;
-    padding: 10px;
 }

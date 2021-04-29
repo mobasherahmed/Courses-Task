@@ -16,6 +16,7 @@ import { NzCheckboxModule } from "ng-zorro-antd/checkbox";
 import { NzInputModule } from "ng-zorro-antd/input";
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { CoursesService } from "src/services/courses.service";
+// import { NzToolTipModule } from "ng-zorro-antd/tooltip";
 // import { NzPaginationModule } from "ng-zorro-antd/pagination";
 // import { NzPaginationModule } from "ng-zorro-antd";
 // import {NzEmptyModule} from "ng-zorro-antd/empty"
@@ -34,6 +35,7 @@ registerLocaleData(en);
     NzCheckboxModule,
     NzInputModule,
     NzIconModule ,
+    // NzToolTipModule
     // NzPaginationModule
     // NgZorroAntdModule
   ],

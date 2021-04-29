@@ -36,7 +36,7 @@
     "AvailableSeats": 60,
     "CourseImg": "https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/6772888/600/400/m2/fpnw/wm0/6-2-.jpg?1564910090&s=1e59df2788175458b2f96752c3515382",
     "courseLevel": "Beginner",
-    "CourseDuration": 5,
+    "CourseDuration": 1,
     "CourseCategory": "Math"
   },
   {
@@ -46,7 +46,7 @@
     "AvailableSeats": 400,
     "CourseImg": "https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/6772889/600/400/m2/fpnw/wm0/1-.jpg?1564910090&s=d3eeeb3330542d8cacceced45390de20",
     "courseLevel": "Intermediate",
-    "CourseDuration": 10,
+    "CourseDuration": 1,
     "CourseCategory": "Math"
   },
   {
