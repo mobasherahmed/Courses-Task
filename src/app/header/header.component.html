@@ -9,16 +9,16 @@
                 <div class="links">
                     <ul>
                         <div class="d-flex">
-                            <li><a href="" class="active">Home</a></li>
+                            <li><a routerLink="all-courses" class="active">Home</a></li>
                             <li class="text-white"> | </li>
-                            <li><a href="">Student Requested Courses</a></li>
+                            <li><a routerLink="requested-courses/{{StudentId}}">Student Requested Courses</a></li>
                         </div>
                     </ul>
                 </div>
-                <div class="profile-photo">
+                <div class="profile-photo" routerLink="profile/{{StudentId}}" style="cursor: pointer;">
                     <img src="assets/images/1.jpg" alt="">
                     <div class="btn-holder">
-                        <button>My Profile</button>
+                        <button routerLink="profile/{{StudentId}}">My Profile</button>
                     </div>
                 </div>
             </div>

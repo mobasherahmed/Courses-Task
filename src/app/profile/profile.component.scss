@@ -1,0 +1,26 @@
+@import "../../css/mixins.scss";
+@import "../../css/variables.scss";
+
+.profile {
+    margin: 0 60px;
+    color: $color-gray;
+    fieldset {
+        background-color: $background-color;
+        padding: 15px;
+        @include border-raduis(5px);
+    }
+    ul {
+        font-size: $base-font-size;
+        li {
+            margin: 5px 0;
+            div {
+                white-space: nowrap;
+                display: inline-block;
+                width: 80%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 1;
+            }
+        }
+    }
+}

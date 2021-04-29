@@ -16,16 +16,15 @@ import { NzCheckboxModule } from "ng-zorro-antd/checkbox";
 import { NzInputModule } from "ng-zorro-antd/input";
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { CoursesService } from "src/services/courses.service";
-// import { NzToolTipModule } from "ng-zorro-antd/tooltip";
-// import { NzPaginationModule } from "ng-zorro-antd/pagination";
-// import { NzPaginationModule } from "ng-zorro-antd";
-// import {NzEmptyModule} from "ng-zorro-antd/empty"
-// import { NgZorroAntdModule } from "ng-zorro-antd";
+import { RequestedCoursesComponent } from './requested-courses/requested-courses.component';
+import { EmptyComponent } from "src/empty.component";
+import { ProfileComponent } from './profile/profile.component';
+
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, CoursesComponent],
+  declarations: [AppComponent, HeaderComponent, CoursesComponent, RequestedCoursesComponent,EmptyComponent, ProfileComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,10 +33,7 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     NzCheckboxModule,
     NzInputModule,
-    NzIconModule ,
-    // NzToolTipModule
-    // NzPaginationModule
-    // NgZorroAntdModule
+    NzIconModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US },CoursesService],
   bootstrap: [AppComponent],

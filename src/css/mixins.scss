@@ -19,6 +19,22 @@
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
 }
+
+@mixin border-raduis($value) {
+    border-radius: $value;
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    -ms-border-radius: $value;
+    -o-border-radius: $value;
+}
+@mixin top-border-raduis($value) {
+    border-top-left-radius: $value;
+    border-top-right-radius: $value;
+}
+@mixin bottom-border-raduis($value) {
+    border-bottom-left-radius: $value;
+    border-bottom-right-radius: $value;
+}
 @mixin transition-fast() {
     transition: all 0.05s ease-in-out;
     -webkit-transition: all 0.05s ease-in-out;

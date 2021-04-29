@@ -1,0 +1,52 @@
+<div class="requested-courses">
+    <div class="container">
+
+        <div class="header">
+            <div class="title">
+                <h3>My Courses</h3>
+            </div>
+        </div>
+
+        <div class="row main-content">
+            <div class="col-md-4 mt-3" *ngFor="let course of displayData; let i=index">
+                <div class="img-holder">
+                    <img [src]="course.CourseImg" alt="course image">
+                </div>
+                <div class="content">
+                    <div class="title2">
+                        <p>{{course.CourseName}}</p>
+                        <p>{{this.requrstCourseDetails.RequestDate| date:'fullDate'}}</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="d-flex" style="margin-right: 15px;">
+                                <ul style="margin-right: 15px;">
+                                    <li> {{course.courseLevel}}</li>
+                                    <li> Duration : {{course.CourseDuration}}H</li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <span>
+                                            Payment:
+                                        </span>
+                                        <span>
+                                            {{this.requrstCourseDetails.PaymentType}}
+                                        </span>
+                                    </li>
+                                    <li>
+                                        Price : {{course.CoursePrice | currency}}
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

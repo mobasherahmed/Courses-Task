@@ -1,7 +1,5 @@
-$background-color: #121212;
-$color-gray: #ccc;
-$color-white: white;
-$primary-color: seagreen;
+@import "../../css/variables.scss";
+@import "../../css/mixins.scss";
 
 .header {
     margin: 30px;
@@ -34,6 +32,7 @@ $primary-color: seagreen;
         }
         .profile-photo {
             margin-top: -10px;
+
             img {
                 border-radius: 50%;
                 width: 50px;

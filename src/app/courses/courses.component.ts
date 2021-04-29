@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { forkJoin, Subscription } from "rxjs";
 import { CoursesService } from "src/services/courses.service";
 import { map } from 'rxjs/operators'
+import { ShareDataService } from "src/services/share-data.service";
 
 @Component({
   selector: "app-courses",
@@ -18,7 +19,14 @@ export class CoursesComponent implements OnInit {
   displayData: any[];
   today:any = new Date
   filterArr: any [] = [];
-  constructor(private _course:CoursesService) {}
+  StudentId:number = 1234;
+  constructor(private _course:CoursesService,private share:ShareDataService) {
+    /*
+    In Ordianary cases i will get information of user and share it on a services as below
+    to able using any of user data in any component , But Here i will user StudentId variable ..
+    */
+   this.share.assignUserId(this.StudentId)
+  }
 
   ngOnInit(): void {
     this.getRequiredData()
@@ -31,11 +39,12 @@ export class CoursesComponent implements OnInit {
       this._course.getFilterationCategories()
     ]).pipe(map(([courses,filters]) => {
           return {courses,filters}}))
-
     // get all observables results in one subscription to easily unsubscribe them ..
     this.subscription = data.subscribe(data => {
       this.courses = data.courses
       this.displayData = this.courses
+      // save to locaStorage ..
+      localStorage.setItem('Courses', JSON.stringify(data.courses));
       this.filters = data.filters
     })
   }

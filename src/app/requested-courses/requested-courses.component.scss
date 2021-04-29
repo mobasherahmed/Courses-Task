@@ -1,0 +1,38 @@
+@import "../../css/variables.scss";
+@import "../../css/mixins.scss";
+
+.requested-courses {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        .title {
+            border-bottom: 5px solid $primary-color;
+            margin-bottom: 15px;
+            h3 {
+                margin-bottom: 25px;
+            }
+        }
+    }
+    .main-content {
+        @include border-raduis(5px);
+        img {
+            width: 100%;
+            height: 100%;
+            max-height: 250px;
+            @include top-border-raduis(5px);
+        }
+        .content {
+            background-color: $background-color;
+            @include bottom-border-raduis(5px);
+            margin-bottom: 10px;
+            padding: 10px;
+            color: $color-gray;
+            p {
+                margin-bottom: 6px;
+                &:nth-child(2) {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}

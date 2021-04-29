@@ -1,7 +1,5 @@
-$background-color: #181818;
-$color-gray: #ccc;
-$color-white: white;
-$primary-color: seagreen;
+@import "../../css/variables.scss";
+@import "../../css/scrollbar.scss";
 
 .allcourses {
     margin: 30px;
@@ -133,6 +131,16 @@ $primary-color: seagreen;
                 }
             }
         }
+        label {
+            color: #ccc;
+            white-space: pre-wrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            max-height: 70px;
+        }
     }
 
     .updates {
@@ -156,6 +164,14 @@ $primary-color: seagreen;
         p {
             color: $color-gray;
             font-size: 10px;
+            /*
+            To truncate after two lines ..
+            */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            max-height: 40px;
         }
     }
 }

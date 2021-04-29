@@ -26,7 +26,7 @@ $border: $gray-2;
 
 // Accent alls
 $default: $gray-4;
-$primary: $blue;
+// $primary: $blue;
 $secondary: $gray-5;
 $success: $green;
 $info: $blue-light;
@@ -44,7 +44,8 @@ $dark-gray-5: #141322;
 $dark-gray-6: #0c0c1b;
 
 // Font Size
-$base-font-size: 15 !default;
+$base-font-size: 15px !default;
+$large-font-size: 17px !default;
 
 // Shadows
 $shadow: 0 0 40px -10px rgba($black, 0.2);

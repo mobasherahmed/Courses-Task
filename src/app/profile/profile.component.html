@@ -1,0 +1,25 @@
+<div class="profile">
+    <!-- <div class="container"> -->
+    <div class="row">
+        <div class="col-md-4">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <ul>
+                    <li><span>Name : </span><span>{{data[0].Name}}</span></li>
+                    <li><span>Email : </span><span>{{data[0].Email}}</span></li>
+                    <li><span>Phone : </span><span>{{data[0].Phone}}</span></li>
+                    <li><span>Addrees : </span>
+                        <div>{{data[0].Address}}</div>
+                    </li>
+                    <li><span>Regiseration Date : </span>
+                        <span>{{data[0].RegisterDate | date:'fullDate'}}</span>
+                    </li>
+                </ul>
+            </fieldset>
+        </div>
+        <div class="col-md-8">
+            <app-requested-courses></app-requested-courses>
+        </div>
+    </div>
+    <!-- </div> -->
+</div>

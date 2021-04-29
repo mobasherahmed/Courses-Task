@@ -77,23 +77,3 @@ ant-checkbox:hover {
 .ant-checkbox-wrapper + .ant-checkbox-wrapper {
     margin-left: 0 !important;
 }
-
-/* width */
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #181818;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: black;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: black;
-}
