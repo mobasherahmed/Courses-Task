@@ -17,11 +17,11 @@ export class RequestedCoursesComponent implements OnInit {
   studentCourses: any [] = [];
   requestedCourses: any [] = [];
   AllCourses: any;
+  today:Date = new Date
   requrstCourseDetails: { PaymentType: any; RequestDate: any; };
   TotalPrice: number;
   constructor(private _course:CoursesService,private route:ActivatedRoute,private share:ShareDataService) {
     this.requestedCourses = this.share.getRequestedCourses()
-    console.log(this.requestedCourses)
    }
 
   ngOnInit(): void {
@@ -38,7 +38,7 @@ export class RequestedCoursesComponent implements OnInit {
     // get all courses from localStorage .. 
     this.AllCourses = JSON.parse(localStorage.getItem('Courses'));
   }
-// get StudentCourses .. 
+
   getStudentCourses(){
     /*
     First get all students courses and filter them by custom student id that come from url 

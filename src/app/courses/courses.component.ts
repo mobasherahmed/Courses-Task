@@ -48,8 +48,10 @@ export class CoursesComponent implements OnInit {
     })
   }
 
+  
   //add course
   addCourse(course){
+    // this.editCourseSeats(course.CourseId,course.AvailableSeats - 1)
     this.share.assignRequestedCourse(course)
     this.CourseName = course.CourseName
     this.CourseId.push(course.CourseId) 
@@ -58,6 +60,19 @@ export class CoursesComponent implements OnInit {
     setTimeout(() => {
       this.showAlert = false
     }, 2000);
+  }
+
+
+  editCourseSeats(courseId , AvaliableSeats){
+    let allCourses = JSON.parse(localStorage.getItem('Courses'));
+    allCourses.forEach(el => {
+      if(el.CourseId === courseId){
+        el.AvailableSeats = AvaliableSeats
+      }
+    });
+    console.log(allCourses)
+    localStorage.setItem('Courses', JSON.stringify(allCourses));
+    this.displayData = allCourses
   }
 
   // search function 

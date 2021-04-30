@@ -74,10 +74,11 @@
 
                             </div>
                         </div>
-
+                        <!-- disabled this button if AvailableSeats = 0 or u already just added ..  -->
                         <div class="col-md-4 mt-3">
                             <button class="btn btn-success" (click)="addCourse(course)"
-                                [disabled]="CourseId.includes(course.CourseId)">{{CourseId.includes(course.CourseId) ?
+                                [disabled]="CourseId.includes(course.CourseId) || course.AvailableSeats == 0">{{CourseId.includes(course.CourseId)
+                                ?
                                 cartText :
                                 'Add to cart'}}</button>
 

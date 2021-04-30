@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { CoursesService } from 'src/services/courses.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { CoursesService } from 'src/services/courses.service';
 export class ProfileComponent implements OnInit {
   StudentId: number;
   data: any 
+  subscription: Subscription;
 
   constructor(private route:ActivatedRoute,private _course:CoursesService) { }
 
@@ -22,12 +24,17 @@ export class ProfileComponent implements OnInit {
   }
 
   getStudentInfo(){
- this._course.getStudentInfo().subscribe((res:any)=>{
+   this.subscription =  this._course.getStudentInfo().subscribe((res:any)=>{
    let allstudent = res;
    this.data = allstudent.filter(student => student.Id  === this.StudentId)
  })
+
 }
 
+  // unsubscribe observables
+  ngOnDestroy(){
+    this.subscription.unsubscribe()
+  } 
 
 
 }
