@@ -15,6 +15,8 @@ import { CoursesComponent } from "./courses/courses.component";
 import { NzCheckboxModule } from "ng-zorro-antd/checkbox";
 import { NzInputModule } from "ng-zorro-antd/input";
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+
 import { CoursesService } from "src/services/courses.service";
 import { RequestedCoursesComponent } from './requested-courses/requested-courses.component';
 import { EmptyComponent } from "src/empty.component";
@@ -35,6 +37,7 @@ registerLocaleData(en);
     NzCheckboxModule,
     NzInputModule,
     NzIconModule,
+    NzCarouselModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US },CoursesService],
   bootstrap: [AppComponent],

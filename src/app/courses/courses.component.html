@@ -97,39 +97,43 @@
 
     <div class="rightside col-md-2">
         <div class="todoList">
-            <h5>TodoList</h5>
-            <div class="pagination">
-                <!-- <nz-pagination [nzPageIndex]="1" [nz-total]="10"></nz-pagination> -->
+            <div class="d-flex" style="justify-content: space-between;">
+                <h5>TodoList</h5>
+                <i nz-icon nzType="calendar" nzTheme="outline" class="mt-2"></i>
             </div>
+            <nz-carousel [nzDotPosition]="'top'" nzAutoPlay>
+                <div nz-carousel-content *ngFor="let index of [1,2,3,4,5]">
+                    <p class="mt-3">{{today | date:'fullDate'}}</p>
+                    <div class="list" *ngFor="let i of [1,2,3,4,5,6,7,8]">
+                        <div class="row">
 
-            <p>{{today | date:'fullDate'}}</p>
-            <div class="list" *ngFor="let i of [1,2,3,4,5,6,7,8]">
-                <div class="row">
+                            <div class="col-md-3 time">
+                                <div class="d-flex">
+                                    <p>
+                                        9am-10am
+                                    </p>
+                                    <span class="mt-1">|</span>
+                                </div>
+                            </div>
+                            <div class="col-md-8 mt-3 ml-2">
+                                <label nz-checkbox [(ngModel)]="todoListCheck">
+                                    <!--- del tag used to line throgh text Semantic HTML-->
+                                    <del>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis cum laboriosam
+                                        culpa
+                                        error repudiandae illum provident sed repellat maxime! Illum
+                                        perspiciatis aperiam, maiores sint nostrum minima! Amet reiciendis a magnam?
+                                    </del>
+                                </label>
 
-                    <div class="col-md-3 time">
-                        <div class="d-flex">
-                            <p>
-                                9am-10am
-                            </p>
-                            <span class="mt-1">|</span>
+
+
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-8 mt-3 ml-2">
-                        <label nz-checkbox [(ngModel)]="todoListCheck">
-                            <!--- del tag used to line throgh text Semantic HTML-->
-                            <del>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis cum laboriosam culpa
-                                error repudiandae illum provident sed repellat maxime! Illum
-                                perspiciatis aperiam, maiores sint nostrum minima! Amet reiciendis a magnam?
-                            </del>
-                        </label>
-
-
 
                     </div>
                 </div>
-
-            </div>
+            </nz-carousel>
         </div>
 
         <div class="updates">
