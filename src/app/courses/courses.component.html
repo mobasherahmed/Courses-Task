@@ -4,7 +4,7 @@
 <div class="row my-3 allcourses">
 
 
-    <div class="filter col-md-2">
+    <div class="filter col-lg-2">
         <div class="main">
             <div class="title">
                 <h4>Filter BY:</h4>
@@ -23,9 +23,9 @@
 
     </div>
 
-    <div class=" courses col-md-8">
+    <div class=" courses col-lg-8">
 
-        <div class="row" style="justify-content: space-between;padding: 0 22px;">
+        <div class="row justify-content-between" style="padding: 0 22px;">
             <div class="title">
                 <h3>All Courses</h3>
             </div>
@@ -89,15 +89,13 @@
             </div>
         </div>
 
-        <!-- <app-empty></app-empty> -->
+        <app-empty *ngIf="displayData.length === 0"></app-empty>
 
     </div>
 
-
-
-    <div class="rightside col-md-2">
+    <div class="rightside col-lg-2">
         <div class="todoList">
-            <div class="d-flex" style="justify-content: space-between;">
+            <div class="d-flex justify-content-between">
                 <h5>TodoList</h5>
                 <i nz-icon nzType="calendar" nzTheme="outline" class="mt-2"></i>
             </div>

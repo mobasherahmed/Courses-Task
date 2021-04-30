@@ -88,6 +88,10 @@
             -moz-border-radius: 10;
             -ms-border-radius: 10;
             -o-border-radius: 10;
+            label {
+                color: $color-gray;
+                white-space: pre;
+            }
         }
         .main {
             border-radius: 10px;
@@ -95,10 +99,6 @@
                 border-bottom: 0;
             }
         }
-    }
-    label {
-        color: $color-gray;
-        white-space: pre;
     }
     .todoList {
         background-color: $background-color;
@@ -193,4 +193,21 @@
     padding: 7px;
     white-space: pre-line;
     width: 400px;
+}
+
+@media (max-width: 1296px) {
+    label {
+        color: $color-gray;
+        white-space: pre-wrap !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .search {
+        margin-bottom: 10px;
+    }
+    .filter .main .content {
+        display: flex;
+        flex-direction: column;
+    }
 }
