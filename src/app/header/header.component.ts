@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +7,6 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  StudentId = 1234
   activeText: string= 'home'
   constructor(private router:Router) {
    }
