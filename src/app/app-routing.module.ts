@@ -17,11 +17,11 @@ const routes: Routes = [
     component: CoursesComponent,
   },
   {
-    path: 'requested-courses/:id',
+    path: 'requested-courses',
     component: RequestedCoursesComponent,
   },
   {
-    path: 'profile/:id',
+    path: 'profile',
     component: ProfileComponent,
   },
   { path: '**', component: NotFoundComponent },

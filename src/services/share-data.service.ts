@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 export class ShareDataService {
 
   courses :any [] = []
-
+  requrstCourseDetails: { PaymentType: any; RequestDate: any; };
+  selectedCoursesIds:any [] = [];
   getRequestedCourses(){
     return this.courses;
 }

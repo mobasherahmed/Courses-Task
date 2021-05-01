@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { CoursesService } from 'src/services/courses.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,32 +8,12 @@ import { CoursesService } from 'src/services/courses.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  StudentId: number;
   data: any 
-  subscription: Subscription;
-
-  constructor(private route:ActivatedRoute,private _course:CoursesService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params=>{
-      // We should Conver it to number as params always return a string value ..  
-      this.StudentId = Number(params.get('id'))
-    })
-    this.getStudentInfo()
+    this.data =JSON.parse( localStorage.getItem('studentInfo'))
   }
-
-  getStudentInfo(){
-   this.subscription =  this._course.getStudentInfo().subscribe((res:any)=>{
-   let allstudent = res;
-   this.data = allstudent.filter(student => student.Id  === this.StudentId)
- })
-
-}
-
-  // unsubscribe observables
-  ngOnDestroy(){
-    this.subscription.unsubscribe()
-  } 
 
 
 }
