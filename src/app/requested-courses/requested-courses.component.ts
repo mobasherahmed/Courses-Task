@@ -11,28 +11,28 @@ import { ShareDataService } from 'src/services/share-data.service';
 })
 export class RequestedCoursesComponent implements OnInit {
 
-  displayData: any[]; 
-  requestedCourses: any [] = [];
-  today:Date = new Date
-  requrstCourseDetails: { PaymentType: any; RequestDate: any; };
+  displayData: any[];
+  requestedCourses: any[] = [];
+  today: Date = new Date
+  requrstCourseDetails: { PaymentType: any; RequestDate: any; } = { PaymentType: 'Online', RequestDate: this.today };
   TotalPrice: number;
-  constructor(private share:ShareDataService) {
+  constructor(private share: ShareDataService) {
     this.requestedCourses = this.share.getRequestedCourses()
-    this.requrstCourseDetails = this.share.requrstCourseDetails
-   }
+    this.requrstCourseDetails = this.share.requrstCourseDetails ? this.share.requrstCourseDetails : this.requrstCourseDetails
+  }
 
   ngOnInit(): void {
     let data = JSON.parse(localStorage.getItem('studentCourses'))
     this.displayData = this.requestedCourses.concat(data)
     this.getTotalPrice(this.displayData)
   }
-   
-    getTotalPrice(data){
-    let price  = 0 
+
+  getTotalPrice(data) {
+    let price = 0
     data.forEach(el => {
       price += el.CoursePrice;
       this.TotalPrice = price
     });
-    
+
   }
 }
